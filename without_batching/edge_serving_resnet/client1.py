@@ -62,7 +62,7 @@ def guarantee_ratio(duration):
 def run(query_id, query_type, query_band):
     qtime = 0
     q = query_band
-    if(query_type < 0.25):
+    if(query_type < 0.5):
         start = start2
         end = end2
         #sleep(0.03)
