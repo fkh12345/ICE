@@ -70,7 +70,7 @@ def run(query_id, query_type, query_band):
 if __name__ == '__main__':
     plist = []
     query_list = []
-    band = np.random.uniform(100, 300, args.bs)
+    band = np.random.uniform(50, 150, args.bs)
 
     sleep_time = []
 
