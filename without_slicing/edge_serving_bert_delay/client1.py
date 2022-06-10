@@ -69,7 +69,7 @@ if __name__ == '__main__':
     
     plist = []
     query_list = []
-    band = np.random.uniform(200, 400, args.bs)
+    band = np.random.uniform(50, 150, args.bs)
 
     for i in range(0, args.bs):
         query_list.append(random())
