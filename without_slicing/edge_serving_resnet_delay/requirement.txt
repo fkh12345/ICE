@@ -1,0 +1,7 @@
+protobuf==3.2.0
+pillow=6.2.0
+grpcio
+pandas
+matplotlib
+argparse
+tqdm

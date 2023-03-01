@@ -1,0 +1,9 @@
+numpy
+matplotlib
+pandas
+tqdm
+grpcio==1.16.0
+protobuf==1.16.0
+argparse
+scipy
+
