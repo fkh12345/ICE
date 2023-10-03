@@ -32,7 +32,7 @@ args = parser.parse_args()
 model = Yolov3()
 DAG, DAG_layer_name = model._trace_graph()
 model.set_profile(True)
-model.set_input([0, 96])
+model.set_input([0, 113])
 model.set_profile(False)
 model_input = model.get_input()
 
@@ -58,7 +58,7 @@ class FormatData(data_pb2_grpc.FormatDataServicer):
         start = request.start
         end = request.end
 
-        index = serving.push_data(start, str, [0, 96], "cuda:0")
+        index = serving.push_data(start, str, [0, 113], "cuda:0")
 
         serving_window.acquire()
         se.acquire()
@@ -121,7 +121,7 @@ def serve():
                 #print('change to False')
                 continue
             if(args.method == 'ICE'):
-                serving.queue_time = change_waiting_queue(serving.start, serving.queue_time_origin, [0, 96])
+                serving.queue_time = change_waiting_queue(serving.start, serving.queue_time_origin, [0, 113])
             if(len(serving.input) >= args.bs):
                 se.acquire()
                 isprocess = True

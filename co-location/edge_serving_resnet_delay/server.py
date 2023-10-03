@@ -29,7 +29,7 @@ model = models.resnet50()
 #model = Yolov3()
 DAG, DAG_layer_name = model._trace_graph()
 model.set_profile(True)
-model.set_input([0, 83, 112])
+model.set_input([0, 83, 119])
 model.set_profile(False)
 model_input = model.get_input()
 model = model.to('cuda:0')
@@ -57,7 +57,7 @@ class FormatData(data_pb2_grpc.FormatDataServicer):
         #buffer.seek(0)
         #input = torch.load(buffer)
 
-        index = serving.push_data(start, str, [0, 83, 112], "cuda:0")
+        index = serving.push_data(start, str, [0, 83, 119], "cuda:0")
         serving_window.acquire()
         se.acquire()
         #while(isprocess is not False):
@@ -121,7 +121,7 @@ def serve():
                 isprocess = False
                 #print('change to False')
                 continue
-            serving.queue_time = change_waiting_queue(serving.start, serving.queue_time_origin, [0, 83, 112])
+            serving.queue_time = change_waiting_queue(serving.start, serving.queue_time_origin, [0, 83, 119])
             if(len(serving.input) >= args.bs):
                 se.acquire()
                 isprocess = True

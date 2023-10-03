@@ -47,7 +47,7 @@ def change_waiting_queue(start, waiting_queue, query_start):
     for i, item in enumerate(start):
         if(item == 90):
             waiting_queue[i] = waiting_queue[i] - time1[0]
-        elif(item == 112):
+        elif(item == 119):
             waiting_queue[i] = waiting_queue[i] - time1[0]
         
     return waiting_queue

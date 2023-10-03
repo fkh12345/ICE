@@ -33,7 +33,7 @@ model = models.resnet50()
 #model = Yolov3()
 DAG, DAG_layer_name = model._trace_graph()
 model.set_profile(True)
-model.set_input([0, 112])
+model.set_input([0, 119])
 model.set_profile(False)
 model_input = model.get_input()
 model = model.to('cuda:0')
@@ -58,7 +58,7 @@ class FormatData(data_pb2_grpc.FormatDataServicer):
         start = request.start
         end = request.end
  
-        index = serving.push_data(start, str, [0, 112], 'cuda:0')
+        index = serving.push_data(start, str, [0, 119], 'cuda:0')
         serving_window.acquire()
         se.acquire()
         #while(isprocess is not False):
@@ -125,7 +125,7 @@ def serve():
                 #print('change to False')
                 continue
             if(args.method == 'ICE'):
-                serving.queue_time = change_waiting_queue(serving.start, serving.queue_time_origin, [0, 112])
+                serving.queue_time = change_waiting_queue(serving.start, serving.queue_time_origin, [0, 119])
             if(len(serving.input) >= args.bs):
                 se.acquire()
                 isprocess = True

@@ -21,7 +21,7 @@ import torchvision.models as models
 def profile_model():
     model = models.resnet50()
     model.set_profile(True)
-    model.set_input([0, 83, 112])
+    model.set_input([0, 83, 119])
     model.set_profile(False)
     model_input = model.get_input()
     del model
@@ -33,7 +33,7 @@ model_input = profile_model()
 
 start1 = 0
 end1 = 173
-start2 = 112
+start2 = 119
 end2 = 173
 start3 = 83
 end3=173

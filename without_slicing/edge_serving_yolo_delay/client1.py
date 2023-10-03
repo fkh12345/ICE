@@ -17,7 +17,7 @@ from dnn_model.yolo import Yolov3
 def profile_model():
     model = Yolov3()
     model.set_profile(True)
-    model.set_input([0, 96])
+    model.set_input([0, 113])
     model.set_profile(False)
     model_input = model.get_input()
     del model
@@ -26,7 +26,7 @@ def profile_model():
 start1 = 0
 end1 = 196
 qtime = 0
-start2 = 96
+start2 = 113
 end2 = 196
 model_input = profile_model()
 data1 = model_input[0]

@@ -34,6 +34,6 @@ def change_waiting_queue(start, waiting_queue, query_start):
         time1.append(time2)
     #print(time1)
     for i, item in enumerate(start):
-        if(item == 112):
+        if(item == 119):
             waiting_queue[i] = waiting_queue[i] - time1[1]
     return waiting_queue

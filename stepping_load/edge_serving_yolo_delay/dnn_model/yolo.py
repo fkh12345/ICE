@@ -31,7 +31,7 @@ class DarknetLayer(nn.Module):
         return x
 
 class DarknetBlock(nn.Module):
-    def __init__(self, layers, skip = True):
+    def __init__(self, layers, skip = False):
         super().__init__()
         self.skip = skip
         self.layers = nn.ModuleDict()
